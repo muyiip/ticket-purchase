@@ -250,3 +250,43 @@ appium --use-plugins uiautomator2
 
   
 
+## 大麦 iOS 抢票（Appium + XCUITest）
+
+### 前置条件（必须在 macOS 上执行）
+- 安装 Xcode（含命令行工具）并登录 Apple 开发者账号
+- 安装 Node 18+ 与 Appium 2.x
+  - `npm install -g appium`
+  - 安装 iOS 驱动：`appium driver install xcuitest`
+- 可选：`brew install ios-deploy`（提升真机部署稳定性）
+- iPhone 打开“开发者模式”，用数据线连接 Mac，信任此电脑
+
+### 准备配置
+- 进入 `damai_appium_ios/`，修改 `config.json`：
+  - `server_url`: 一般为 `http://127.0.0.1:4723`
+  - `device_name`: iPhone 设备名称（如“iPhone 14 Pro”）
+  - `platform_version`: iOS 版本（如“17.5”）
+  - `udid`: 设备 UDID（在 Finder 或 Xcode 设备列表查看）
+  - `bundle_id`: 大麦 iOS App 的 Bundle ID（示例：`cn.damai.iphone`，请以实际为准）
+  - `keyword`/`city`/`date`/`price`/`users`/`if_commit_order`
+  - 如首次在真机部署 WDA，需要配置 `xcode_org_id` 与 `xcode_signing_id`（Apple Development）
+
+### 启动 Appium Server（iOS）
+```bash
+appium
+```
+- 终端中会打印出监听地址（例如 `http://127.0.0.1:4723`），与 `config.json` 对应
+
+### 运行脚本
+```bash
+cd damai_appium_ios
+python3 damai_ios.py
+```
+
+### 说明与限制
+- 脚本运行在 Mac 上，通过 Appium/XCUITest 远程控制 iPhone；无法将此 Python 脚本“安装到 iPhone 内部直接运行”
+- 首次运行会自动在真机上部署 WebDriverAgent（WDA），需保证签名配置正确并在手机上信任证书
+- 为避免外部滥用，请仅在本机 `127.0.0.1` 启动 Appium Server
+- 根据页面变化，需适时调整定位策略（本仓库已提供通用的 iOS Predicate / Class Chain 兜底）
+
+
+

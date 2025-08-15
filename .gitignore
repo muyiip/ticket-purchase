@@ -163,6 +163,9 @@ config.json
 credentials.json
 *.cookie
 *.session
+# Cookies / serialized sessions (do NOT commit)
+damai_cookies.pkl
+*.pkl
 
 # Temporary files
 *.tmp
