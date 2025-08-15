@@ -64,9 +64,8 @@ def mock_appium_driver():
     mock_driver.swipe = Mock()
     mock_driver.quit = Mock()
     
-    # Mock the Remote class
-    with patch.object(mock_driver, "__class__.__name__", "Remote"):
-        yield mock_driver
+    # Mock the Remote class (no-op here, just yield the mock)
+    yield mock_driver
 
 
 @pytest.fixture

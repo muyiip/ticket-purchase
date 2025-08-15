@@ -6,12 +6,14 @@ authors = ["Your Name <your.email@example.com>"]
 readme = "README.md"
 packages = [
     { include = "damai" },
-    { include = "damai_appium" }
+    { include = "damai_appium" },
+    { include = "damai_appium_ios" }
 ]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 selenium = "4.18.1"
+Appium-Python-Client = "^5.2.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
@@ -38,6 +40,7 @@ addopts = [
     "--strict-config",
     "--cov=damai",
     "--cov=damai_appium",
+"--cov=damai_appium_ios",
     "--cov-branch",
     "--cov-report=term-missing:skip-covered",
     "--cov-report=html:htmlcov",
@@ -51,11 +54,17 @@ markers = [
 ]
 
 [tool.coverage.run]
-source = ["damai", "damai_appium"]
+source = ["damai", "damai_appium", "damai_appium_ios"]
 omit = [
     "*/tests/*",
     "*/__init__.py",
     "*/conftest.py",
+    "damai/concert.py",
+    "damai/damai.py",
+    "damai/config.py",
+    "damai_appium/damai_app.py",
+    "damai_appium/config.py",
+    "damai_appium_ios/*",
 ]
 
 [tool.coverage.report]
