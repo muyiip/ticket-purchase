@@ -1,0 +1,31 @@
+Pin,Name,Function,Notes
+1,+24V_IN,Power Input,9-36V tolerant via surge clamp
+2,GND,Power Ground,Chassis/logic reference
+3,RS485_A,RS-485 A line,Differential pair with 120Ω term (external or internal)
+4,RS485_B,RS-485 B line,Differential pair with 120Ω term (external or internal)
+5,CAN_H,CAN High,Use split termination and common-mode choke
+6,CAN_L,CAN Low,Use split termination and common-mode choke
+7,DI1+,Digital Input 1 (+),Opto-isolated; 24V wetting
+8,DI1-,Digital Input 1 (-),Opto return
+9,DI2+,Digital Input 2 (+),Opto-isolated
+10,DI2-,Digital Input 2 (-),Opto return
+11,DI3+,Digital Input 3 (+),Opto-isolated
+12,DI3-,Digital Input 3 (-),Opto return
+13,DI4+,Digital Input 4 (+),Opto-isolated
+14,DI4-,Digital Input 4 (-),Opto return
+15,DO1,Digital Output 1,Low-side MOSFET; 500 mA max
+16,DO1_GND,DO1 Return,High-current ground return
+17,DO2,Digital Output 2,Low-side MOSFET; 500 mA max
+18,DO2_GND,DO2 Return,High-current ground return
+19,AI1+,Analog Input 1 (+),0-10V or 4-20mA selectable
+20,AI1-,Analog Input 1 (-),Sense/shunt return
+21,AI2+,Analog Input 2 (+),0-10V or 4-20mA selectable
+22,AI2-,Analog Input 2 (-),Sense/shunt return
+23,AO1,Analog Output 1,0-10V or 4-20mA (via ext. loop)
+24,AO1_GND,AO1 Return,Analog ground reference
+25,K1_NO,Relay 1 Normally Open,250VAC/2A rated contact
+26,K1_COM,Relay 1 Common,
+27,K2_NO,Relay 2 Normally Open,250VAC/2A rated contact
+28,K2_COM,Relay 2 Common,
+29,+3V3_OUT,Aux Power Out,Max 200 mA for sensors
+30,GND,Ground,Common reference

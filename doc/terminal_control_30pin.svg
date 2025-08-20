@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1000" viewBox="0 0 1400 1000">
+  <defs>
+    <style type="text/css"><![CDATA[
+      .title { font: bold 22px sans-serif; }
+      .subtitle { font: bold 16px sans-serif; }
+      .label { font: 13px monospace; }
+      .pin { fill: #1f77b4; }
+      .box { fill: #f9f9f9; stroke: #333; stroke-width: 1.5; }
+      .wire { stroke: #555; stroke-width: 1.5; fill: none; }
+      .gnd { stroke: #222; stroke-width: 2; }
+      .vbus { stroke: #b22222; stroke-width: 2; }
+      .note { font: italic 12px sans-serif; fill: #666; }
+    ]]></style>
+  </defs>
+
+  <rect x="0" y="0" width="1400" height="1000" fill="#ffffff"/>
+  <text x="700" y="40" class="title" text-anchor="middle">Smart Terminal Control-End Circuit (30-pin)</text>
+  <text x="700" y="65" class="note" text-anchor="middle">Functional schematic for planning and review. Not a detailed PCB/safety-certified drawing.</text>
+
+  <!-- Terminal Block J1 -->
+  <g id="terminal">
+    <rect class="box" x="40" y="100" width="200" height="780" rx="6" ry="6"/>
+    <text x="140" y="90" class="subtitle" text-anchor="middle">J1 - 30-pin Terminal</text>
+    <!-- Pins -->
+    <!-- Auto layout: 30 pins spaced 24px -->
+    <!-- Power & Comm -->
+    <circle class="pin" cx="55" cy="130" r="5"/>
+    <text class="label" x="70" y="135">1: +24V_IN</text>
+    <circle class="pin" cx="55" cy="154" r="5"/>
+    <text class="label" x="70" y="159">2: GND</text>
+
+    <circle class="pin" cx="55" cy="178" r="5"/>
+    <text class="label" x="70" y="183">3: RS485_A</text>
+    <circle class="pin" cx="55" cy="202" r="5"/>
+    <text class="label" x="70" y="207">4: RS485_B</text>
+
+    <circle class="pin" cx="55" cy="226" r="5"/>
+    <text class="label" x="70" y="231">5: CAN_H</text>
+    <circle class="pin" cx="55" cy="250" r="5"/>
+    <text class="label" x="70" y="255">6: CAN_L</text>
+
+    <!-- Digital Inputs (isolated) -->
+    <circle class="pin" cx="55" cy="274" r="5"/>
+    <text class="label" x="70" y="279">7: DI1+</text>
+    <circle class="pin" cx="55" cy="298" r="5"/>
+    <text class="label" x="70" y="303">8: DI1-</text>
+
+    <circle class="pin" cx="55" cy="322" r="5"/>
+    <text class="label" x="70" y="327">9: DI2+</text>
+    <circle class="pin" cx="55" cy="346" r="5"/>
+    <text class="label" x="70" y="351">10: DI2-</text>
+
+    <circle class="pin" cx="55" cy="370" r="5"/>
+    <text class="label" x="70" y="375">11: DI3+</text>
+    <circle class="pin" cx="55" cy="394" r="5"/>
+    <text class="label" x="70" y="399">12: DI3-</text>
+
+    <circle class="pin" cx="55" cy="418" r="5"/>
+    <text class="label" x="70" y="423">13: DI4+</text>
+    <circle class="pin" cx="55" cy="442" r="5"/>
+    <text class="label" x="70" y="447">14: DI4-</text>
+
+    <!-- Digital Outputs -->
+    <circle class="pin" cx="55" cy="466" r="5"/>
+    <text class="label" x="70" y="471">15: DO1</text>
+    <circle class="pin" cx="55" cy="490" r="5"/>
+    <text class="label" x="70" y="495">16: DO1_GND</text>
+
+    <circle class="pin" cx="55" cy="514" r="5"/>
+    <text class="label" x="70" y="519">17: DO2</text>
+    <circle class="pin" cx="55" cy="538" r="5"/>
+    <text class="label" x="70" y="543">18: DO2_GND</text>
+
+    <!-- Analog Inputs -->
+    <circle class="pin" cx="55" cy="562" r="5"/>
+    <text class="label" x="70" y="567">19: AI1+</text>
+    <circle class="pin" cx="55" cy="586" r="5"/>
+    <text class="label" x="70" y="591">20: AI1-</text>
+
+    <circle class="pin" cx="55" cy="610" r="5"/>
+    <text class="label" x="70" y="615">21: AI2+</text>
+    <circle class="pin" cx="55" cy="634" r="5"/>
+    <text class="label" x="70" y="639">22: AI2-</text>
+
+    <!-- Analog Outputs -->
+    <circle class="pin" cx="55" cy="658" r="5"/>
+    <text class="label" x="70" y="663">23: AO1</text>
+    <circle class="pin" cx="55" cy="682" r="5"/>
+    <text class="label" x="70" y="687">24: AO1_GND</text>
+
+    <!-- Relay contacts -->
+    <circle class="pin" cx="55" cy="706" r="5"/>
+    <text class="label" x="70" y="711">25: K1_NO</text>
+    <circle class="pin" cx="55" cy="730" r="5"/>
+    <text class="label" x="70" y="735">26: K1_COM</text>
+
+    <circle class="pin" cx="55" cy="754" r="5"/>
+    <text class="label" x="70" y="759">27: K2_NO</text>
+    <circle class="pin" cx="55" cy="778" r="5"/>
+    <text class="label" x="70" y="783">28: K2_COM</text>
+
+    <!-- Auxiliary power out & GND -->
+    <circle class="pin" cx="55" cy="802" r="5"/>
+    <text class="label" x="70" y="807">29: +3V3_OUT</text>
+    <circle class="pin" cx="55" cy="826" r="5"/>
+    <text class="label" x="70" y="831">30: GND</text>
+  </g>
+
+  <!-- Internal Blocks -->
+  <g id="blocks">
+    <rect class="box" x="340" y="110" width="290" height="170" rx="6" ry="6"/>
+    <text x="485" y="135" class="subtitle" text-anchor="middle">Power Conditioning</text>
+    <text x="355" y="160" class="label">- Reverse polarity protection</text>
+    <text x="355" y="180" class="label">- TVS surge clamp</text>
+    <text x="355" y="200" class="label">- Buck DC/DC 24V → 5V/3.3V</text>
+    <text x="355" y="220" class="label">- LDO and filtering</text>
+
+    <rect class="box" x="340" y="310" width="290" height="160" rx="6" ry="6"/>
+    <text x="485" y="335" class="subtitle" text-anchor="middle">RS-485 Transceiver</text>
+    <text x="355" y="360" class="label">- Half-duplex, failsafe bias</text>
+    <text x="355" y="380" class="label">- 10Ω + TVS per line</text>
+
+    <rect class="box" x="340" y="500" width="290" height="140" rx="6" ry="6"/>
+    <text x="485" y="525" class="subtitle" text-anchor="middle">CAN Transceiver</text>
+    <text x="355" y="550" class="label">- 60Ω split termination</text>
+    <text x="355" y="570" class="label">- Common-mode choke</text>
+
+    <rect class="box" x="680" y="110" width="310" height="240" rx="6" ry="6"/>
+    <text x="835" y="135" class="subtitle" text-anchor="middle">Isolated Digital Inputs (4x)</text>
+    <text x="695" y="160" class="label">- Optocouplers per channel</text>
+    <text x="695" y="180" class="label">- Series resistor + RC filter</text>
+    <text x="695" y="200" class="label">- 2-wire (DI+ / DI-)</text>
+
+    <rect class="box" x="680" y="370" width="310" height="180" rx="6" ry="6"/>
+    <text x="835" y="395" class="subtitle" text-anchor="middle">Digital Outputs (2x)</text>
+    <text x="695" y="420" class="label">- Low-side NMOS drivers</text>
+    <text x="695" y="440" class="label">- Flyback diodes for coils</text>
+    <text x="695" y="460" class="label">- Current limit resistors</text>
+
+    <rect class="box" x="680" y="580" width="310" height="170" rx="6" ry="6"/>
+    <text x="835" y="605" class="subtitle" text-anchor="middle">Analog Inputs (2x)</text>
+    <text x="695" y="630" class="label">- 4–20mA / 0–10V selectable</text>
+    <text x="695" y="650" class="label">- Shunt + anti-alias filter</text>
+
+    <rect class="box" x="680" y="780" width="310" height="100" rx="6" ry="6"/>
+    <text x="835" y="805" class="subtitle" text-anchor="middle">Analog Output (1x)</text>
+    <text x="695" y="830" class="label">- DAC + buffer op-amp</text>
+
+    <rect class="box" x="1040" y="280" width="320" height="280" rx="6" ry="6"/>
+    <text x="1200" y="305" class="subtitle" text-anchor="middle">Control Logic / MCU</text>
+    <text x="1055" y="330" class="label">- Interfaces: SPI/I2C/UART</text>
+    <text x="1055" y="350" class="label">- ADC/DAC, GPIO</text>
+    <text x="1055" y="370" class="label">- Isolation where needed</text>
+  </g>
+
+  <!-- Buses -->
+  <g id="buses">
+    <!-- GND bus -->
+    <line class="gnd" x1="260" y1="154" x2="1330" y2="154"/>
+    <text class="label" x="1335" y="158">GND</text>
+    <!-- +24V bus -->
+    <line class="vbus" x1="260" y1="130" x2="340" y2="130"/>
+    <text class="label" x="300" y="124" text-anchor="middle">+24V_IN</text>
+
+    <!-- +3V3 out from power block to terminal 29 -->
+    <line class="vbus" x1="630" y1="210" x2="260" y2="802"/>
+    <text class="label" x="620" y="204">+3V3_OUT</text>
+  </g>
+
+  <!-- Wiring from terminal to blocks -->
+  <g id="wires">
+    <!-- Power to Power Conditioning -->
+    <polyline class="wire" points="60,130 260,130 340,130"/>
+    <polyline class="wire" points="60,154 260,154"/>
+    <polyline class="wire" points="60,826 260,154"/>
+
+    <!-- RS-485 -->
+    <polyline class="wire" points="60,178 260,178 340,350"/>
+    <text class="label" x="300" y="175">RS485_A</text>
+    <polyline class="wire" points="60,202 260,202 340,370"/>
+    <text class="label" x="300" y="199">RS485_B</text>
+
+    <!-- CAN -->
+    <polyline class="wire" points="60,226 260,226 340,530"/>
+    <text class="label" x="300" y="223">CAN_H</text>
+    <polyline class="wire" points="60,250 260,250 340,550"/>
+    <text class="label" x="300" y="247">CAN_L</text>
+
+    <!-- DI group to Isolated DI block -->
+    <polyline class="wire" points="60,274 300,274 680,160"/>
+    <polyline class="wire" points="60,298 290,298 680,180"/>
+    <polyline class="wire" points="60,322 280,322 680,200"/>
+    <polyline class="wire" points="60,346 270,346 680,220"/>
+    <polyline class="wire" points="60,370 260,370 680,240"/>
+    <polyline class="wire" points="60,394 250,394 680,260"/>
+    <polyline class="wire" points="60,418 240,418 680,280"/>
+    <polyline class="wire" points="60,442 230,442 680,300"/>
+
+    <!-- DO group to DO block -->
+    <polyline class="wire" points="60,466 300,466 680,410"/>
+    <polyline class="wire" points="60,490 290,490 680,430"/>
+    <polyline class="wire" points="60,514 280,514 680,450"/>
+    <polyline class="wire" points="60,538 270,538 680,470"/>
+
+    <!-- AI group to Analog In block -->
+    <polyline class="wire" points="60,562 300,562 680,630"/>
+    <polyline class="wire" points="60,586 290,586 680,650"/>
+    <polyline class="wire" points="60,610 280,610 680,670"/>
+    <polyline class="wire" points="60,634 270,634 680,690"/>
+
+    <!-- AO group to Analog Out block -->
+    <polyline class="wire" points="60,658 300,658 680,820"/>
+    <polyline class="wire" points="60,682 290,682 680,840"/>
+
+    <!-- Relay contacts to DO/Relay area (to right side of DO block) -->
+    <polyline class="wire" points="60,706 320,706 680,430"/>
+    <polyline class="wire" points="60,730 310,730 680,450"/>
+    <polyline class="wire" points="60,754 300,754 680,470"/>
+    <polyline class="wire" points="60,778 290,778 680,490"/>
+  </g>
+
+  <!-- Notes -->
+  <g id="notes">
+    <text x="340" y="930" class="note">Notes:</text>
+    <text x="360" y="950" class="note">1) All external lines should include ESD protection as per IEC 61000-4-2.</text>
+    <text x="360" y="970" class="note">2) Power input: 24V nominal (9–36V tolerant). Size surge clamp per installation class.</text>
+    <text x="360" y="990" class="note">3) Use appropriate isolation barriers for field I/O as required by safety standards.</text>
+  </g>
+</svg>
+
